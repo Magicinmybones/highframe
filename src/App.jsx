@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import desktopUrl from './hero section (2)/Highframe Landing.html?url'
-import mobileUrl from './hero mobile/mobile.html?url'
 
 const MOBILE_BREAKPOINT = 768
+const DESKTOP_URL = '/desktop/index.html'
+const MOBILE_URL = '/mobile/index.html'
 
 function App() {
   const [isMobile, setIsMobile] = useState(
@@ -20,7 +20,7 @@ function App() {
   return (
     <iframe
       key={isMobile ? 'mobile' : 'desktop'}
-      src={isMobile ? mobileUrl : desktopUrl}
+      src={isMobile ? MOBILE_URL : DESKTOP_URL}
       title={isMobile ? 'Highframe Mobile' : 'Highframe Desktop'}
       style={{
         position: 'fixed',
