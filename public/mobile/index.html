@@ -382,10 +382,9 @@
   .preview-image {
     display: block;
     width: 100%;
-    height: 100%;
-    min-height: 210px;
-    object-fit: cover;
-    object-position: center;
+    aspect-ratio: 1456 / 1138;
+    border: 0;
+    background: #000;
     position: relative;
     z-index: 1;
     border-radius: inherit;
@@ -711,9 +710,7 @@
      FOOTER / NEWSLETTER
      =================================================== */
   .foot {
-    background: rgba(8,12,10,.42);
-    backdrop-filter: blur(28px) saturate(160%) brightness(.92);
-    -webkit-backdrop-filter: blur(28px) saturate(160%) brightness(.92);
+    background: #000;
     border-top: 1px solid rgba(255,255,255,.13);
     border-radius: 26px 26px 0 0;
     padding: 54px 22px 44px;
@@ -723,17 +720,6 @@
       0 1px 0 rgba(255,255,255,.10) inset,
       0 -1px 0 rgba(0,0,0,.28) inset;
   }
-  /* Video-palette atmospheric glows */
-  .foot::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse 72% 32% at 10% 0%,   rgba(196,84,122,.20) 0%, transparent 65%),
-      radial-gradient(ellipse 44% 26% at 90% 8%,   rgba(139,95,170,.16) 0%, transparent 58%),
-      radial-gradient(ellipse 60% 38% at 50% 105%,  rgba(16,44,22,.90)  0%, transparent 68%);
-  }
   /* Shimmer edge tying footer to hero */
   .foot::after {
     content: "";
@@ -742,8 +728,8 @@
     height: 1px;
     background: linear-gradient(90deg,
       transparent 0%,
-      rgba(196,84,122,.40) 28%,
-      rgba(139,95,170,.34) 62%,
+      rgba(255,255,255,.40) 28%,
+      rgba(255,255,255,.34) 62%,
       transparent 100%
     );
     pointer-events: none;
@@ -753,14 +739,14 @@
     width: 58px;
     height: 58px;
     border-radius: 50%;
-    background: rgba(196,84,122,.13);
-    border: 1px solid rgba(196,84,122,.30);
+    background: rgba(255,255,255,.13);
+    border: 1px solid rgba(255,255,255,.30);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 22px;
     box-shadow:
-      0 0 22px -6px rgba(196,84,122,.28),
+      0 0 22px -6px rgba(255,255,255,.28),
       0 1px 0 rgba(255,255,255,.10) inset;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -787,7 +773,7 @@
     width: 100%;
     height: 52px;
     background: rgba(255,255,255,.06);
-    border: 1px solid rgba(196,84,122,.20);
+    border: 1px solid rgba(255,255,255,.20);
     border-radius: 14px;
     padding: 0 18px;
     font-size: 15px;
@@ -802,9 +788,9 @@
   }
   .email-field::placeholder { color: rgba(200,180,195,.38); }
   .email-field:focus {
-    border-color: rgba(196,84,122,.48);
-    background: rgba(196,84,122,.08);
-    box-shadow: 0 0 0 3px rgba(196,84,122,.12);
+    border-color: rgba(255,255,255,.48);
+    background: rgba(255,255,255,.08);
+    box-shadow: 0 0 0 3px rgba(255,255,255,.12);
   }
 
   .subscribe-btn {
@@ -825,7 +811,7 @@
     margin-bottom: 38px;
     letter-spacing: -.01em;
     transition: opacity .15s, transform .14s;
-    box-shadow: 0 10px 36px -14px rgba(196,84,122,.38);
+    box-shadow: 0 10px 36px -14px rgba(255,255,255,.38);
   }
   .subscribe-btn:active { opacity: .9; transform: scale(.98); }
 
@@ -884,7 +870,7 @@
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    border: 1px solid rgba(196,84,122,.18);
+    border: 1px solid rgba(255,255,255,.18);
     background: rgba(255,255,255,.04);
     display: flex;
     align-items: center;
@@ -896,16 +882,16 @@
     -webkit-backdrop-filter: blur(8px);
   }
   .soc-btn:hover {
-    background: rgba(196,84,122,.15);
-    border-color: rgba(196,84,122,.38);
+    background: rgba(255,255,255,.15);
+    border-color: rgba(255,255,255,.38);
     color: rgba(240,200,220,.95);
-    box-shadow: 0 0 14px -4px rgba(196,84,122,.28);
+    box-shadow: 0 0 14px -4px rgba(255,255,255,.28);
   }
 
   /* — brand lockup — */
   .foot-brand {
-    background: rgba(196,84,122,.07);
-    border: 1px solid rgba(196,84,122,.16);
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.16);
     border-radius: 18px;
     padding: 24px 20px;
     display: flex;
@@ -917,7 +903,7 @@
     -webkit-backdrop-filter: blur(14px);
     box-shadow:
       0 1px 0 rgba(255,255,255,.08) inset,
-      0 0 28px -16px rgba(196,84,122,.22);
+      0 0 28px -16px rgba(255,255,255,.22);
   }
   .foot-brand .brand { font-size: 20px; }
   .foot-brand .copy-text {
@@ -999,7 +985,7 @@
 
       <div class="hero-preview r" style="transition-delay:.46s">
         <div class="preview-shell">
-          <img class="preview-image" src="dashboard_mobile.png" alt="Highframe dashboard preview">
+          <iframe class="preview-image" src="dashboard-orchestrator.html" title="Highframe dashboard preview" loading="lazy" scrolling="no"></iframe>
         </div>
       </div>
 
@@ -1020,15 +1006,15 @@
       </svg>
     </div>
 
-    <h2 class="loop-hed r" style="transition-delay:.07s">Stay in the loop</h2>
+    <h2 class="loop-hed r" style="transition-delay:.07s">Skip the dev queue</h2>
     <p class="loop-sub r" style="transition-delay:.13s">
-      Get workflow tips, product updates,<br>and exclusive insights.
+      Build internal workflows, smart forms,<br>and automations without code.
     </p>
 
     <form onsubmit="return false" class="r" style="transition-delay:.19s">
-      <input class="email-field" type="email" placeholder="Enter your email">
+      <input class="email-field" type="email" placeholder="Email">
       <button class="subscribe-btn" type="submit">
-        Subscribe
+        Sign up for waitlist
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
           <path d="M2.5 7.5h10M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -1064,9 +1050,10 @@
         </div>
         <div class="acc-body">
           <div class="acc-links">
-            <a href="#">Documentation</a>
+            <a href="#">Mobile</a>
             <a href="#">Manifesto</a>
             <a href="#">Press</a>
+            <a href="#">Docs</a>
             <a href="#">Pricing</a>
           </div>
         </div>
@@ -1107,18 +1094,10 @@
 
     </div>
 
-    <p class="follow-label r" style="transition-delay:.31s">Follow us</p>
     <div class="socials r" style="transition-delay:.37s">
-      <a class="soc-btn" href="#" aria-label="Facebook">
+      <a class="soc-btn" href="#" aria-label="X">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M9.3 3.2h2V.6H9.3C7.5.6 6 2.1 6 3.9v1.6H4v2.5h2V16h2.5V8H11l.5-2.5H8.5V3.9c0-.4.4-.7.8-.7z"/>
-        </svg>
-      </a>
-      <a class="soc-btn" href="#" aria-label="Instagram">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3">
-          <rect x="1.5" y="1.5" width="13" height="13" rx="3.5"/>
-          <circle cx="8" cy="8" r="3"/>
-          <circle cx="12.2" cy="3.8" r=".85" fill="currentColor" stroke="none"/>
+          <path d="M12.3 1.5h2.3l-5 5.8 5.9 7.7h-4.6l-3.6-4.8-4.2 4.8H.8l5.4-6.2L.6 1.5h4.7l3.3 4.4 3.7-4.4zm-.8 12.2h1.3L4.6 2.8H3.2l8.3 10.9z"/>
         </svg>
       </a>
       <a class="soc-btn" href="#" aria-label="LinkedIn">
@@ -1126,9 +1105,9 @@
           <path d="M3.5 5.5H1.2V14h2.3V5.5zM2.35 1a1.35 1.35 0 100 2.7 1.35 1.35 0 000-2.7zM15 14h-2.3V9.6c0-1-.38-1.7-1.3-1.7-.7 0-1.1.48-1.3.94-.07.18-.08.43-.08.68V14H7.8s.03-7.7 0-8.5h2.3v1.2c.33-.52.88-1.3 2.2-1.3 1.62 0 2.7 1.06 2.7 3.35V14z"/>
         </svg>
       </a>
-      <a class="soc-btn" href="#" aria-label="X">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M12.3 1.5h2.3l-5 5.8 5.9 7.7h-4.6l-3.6-4.8-4.2 4.8H.8l5.4-6.2L.6 1.5h4.7l3.3 4.4 3.7-4.4zm-.8 12.2h1.3L4.6 2.8H3.2l8.3 10.9z"/>
+      <a class="soc-btn" href="#" aria-label="GitHub">
+        <svg width="16" height="16" viewBox="0 0 18 18" fill="currentColor">
+          <path d="M9 1.2a7.8 7.8 0 00-2.5 15.2c.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.3-.9-.8-1.2-.8-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.5 7.5 0 014 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.6.8.6 1.6v2.4c0 .2.1.5.5.4A7.8 7.8 0 009 1.2z"/>
         </svg>
       </a>
     </div>
